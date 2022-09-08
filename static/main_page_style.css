@@ -29,11 +29,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_logotype {
-
+    margin-right: 20px;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_logotype a {
@@ -54,10 +54,11 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 600px;
+    margin-right: 20px;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_links a {
-
+    margin-right: 10px;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_links a span {
@@ -72,17 +73,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 60px;
+    width: 600px;
+    height: 30px;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_search input{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 650px;
-    height: 40px;
+    width: 600px;
+    height: 30px;
     background: #252A2C;
     border-radius: 90px;
     border: none;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
 }
