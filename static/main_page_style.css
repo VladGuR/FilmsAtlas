@@ -30,6 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    height: 70px;
 }
 
 .page_menu_atlas .menu_links_seacrh .menu_logotype {
@@ -44,7 +45,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 23px;
+    font-size: 21px;
     color: #FFFFFF;
     letter-spacing: 1px;
 }
@@ -65,7 +66,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     color: #FFFFFF;
 }
 
