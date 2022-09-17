@@ -312,9 +312,17 @@ body {
 
 .all_content_atlas .all_content_left_block .high_rated_movies {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
     width: 100%;
+    flex-direction: column;
+}
+
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_common_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
 .all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating {
@@ -322,6 +330,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-right: 30px;
 }
 
 .all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating span {
@@ -342,36 +351,104 @@ body {
     align-items: center;
     width: 430px;
     height: 670px;
-    border-radius: 2px;
+    border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_IMDb {
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block {
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
     width: 428px;
     height: 152px;
-    background: rgba(28, 29, 31, 0.5);
+    /*background: rgba(28, 29, 31, 0.5);*/
     border: 1px solid #2B2B2B;
     box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(20px);
     border-radius: 5px;
 }
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    border: 3px solid #FF8E00;
+    flex-direction: column;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block .rating_votes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block .rating_site_names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block .named_rus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #FFFFFF;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block .named_eng{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #FFFFFF;
+}
 
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .duration_age_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    border: 1px solid #2B2B2B;
+    border-radius: 5px;
+}
 
-
-
-
-
-
-
+.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .duration_age_block .duration_age_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+}
 
 
 
