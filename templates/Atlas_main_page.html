@@ -6,299 +6,331 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/main_page_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="Atlas_main_page.html">FilmAtlas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Подборки</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Жанры
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Боевик</a></li>
+                            <li><a class="dropdown-item" href="#">Военные</a></li>
+                            <li><a class="dropdown-item" href="#">Детектив</a></li>
+                            <li><a class="dropdown-item" href="#">Детский</a></li>
+                            <li><a class="dropdown-item" href="#">Драма</a></li>
+                            <li><a class="dropdown-item" href="#">Комедия</a></li>
+                            <li><a class="dropdown-item" href="#">Криминал</a></li>
+                            <li><a class="dropdown-item" href="#">Мелодрамма</a></li>
+                            <li><a class="dropdown-item" href="#">Триллер</a></li>
+                            <li><a class="dropdown-item" href="#">Ужасы</a></li>
+                            <li><a class="dropdown-item" href="#">Фантастика</a></li>
+                            <li><a class="dropdown-item" href="#">Фентези</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Фильмы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Сериалы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Мультфимы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Аниме</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Films search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        <svg viewBox="0 0 487.95 487.95" fill="black" width="20px" height="20px">
+                            <path d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1
+                            c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4
+                            c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<div class="page_menu_atlas">
-    <div class="menu_links_seacrh">
-        <div class="menu_logotype">
-            <a href="Atlas_main_page.html">
-                <span>
-                    FilmAtlas
-                </span>
-            </a>
-        </div>
-        <div class="menu_links">
-            <a href="">
-                <span>
-                    Подборки
-                </span>
-            </a>
-            <a href="">
-                <span>
-                    Жанры
-                </span>
-            </a>
-            <a href="">
-                <span>
-                    Фильмы
-                </span>
-            </a>
-            <a href="">
-                <span>
-                    Сериалы
-                </span>
-            </a>
-            <a href="">
-                <span>
-                    Мультфимы
-                </span>
-            </a>
-            <a href="">
-                <span>
-                    Аниме
-                </span>
-            </a>
-        </div>
-        <div class="menu_search">
-            <input type="text" placeholder="Поиск по сайту">
+<content class="w-100" >
+    <div class="card">
+        <img src="/static/img/poster1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">
+               Мы собрали для Вас подборку лучших фильмов по теме “{название подборки}” с рейтингом от {минимальный рейтинг фильмов из подборки} и до {максимальный рейтинг фильмов из подборки}. В неё вошли фильмы следующих жанров: {жанр1}({число раз}), {жанр2}({число раз}), {жанр3}({число раз}). Самый новый фильм - {год} года, самый старый фильм - {год} года. Продолжительность фильмов от {минимальная продолжительность} до {максимальная продолжительность}. Выбирайте фильм и приятного просмотра
+            </p>
         </div>
     </div>
-</div>
+</content>
 
-<div class="all_content_atlas">
-    <div class="all_content_left_block">
-        <div class="best_films_img_descript">
-            <img class="best_films_img" src="/static/img/poster1.jpg" alt="">
-            <span class="best_films_descript">
-                Мы собрали для Вас подборку лучших фильмов по теме “{название подборки}” с рейтингом от {минимальный рейтинг фильмов из подборки} и до {максимальный рейтинг фильмов из подборки}. В неё вошли фильмы следующих жанров: {жанр1}({число раз}), {жанр2}({число раз}), {жанр3}({число раз}). Самый новый фильм - {год} года, самый старый фильм - {год} года. Продолжительность фильмов от {минимальная продолжительность} до {максимальная продолжительность}. Выбирайте фильм и приятного просмотра!
-            </span>
-        </div>
+<!--<div class="all_content_atlas">-->
+<!--    <div class="all_content_left_block">-->
+<!--        <div class="best_films_img_descript">-->
+<!--            <img class="best_films_img" src="/static/img/poster1.jpg" alt="">-->
+<!--            <span class="best_films_descript">-->
+<!--                Мы собрали для Вас подборку лучших фильмов по теме “{название подборки}” с рейтингом от {минимальный рейтинг фильмов из подборки} и до {максимальный рейтинг фильмов из подборки}. В неё вошли фильмы следующих жанров: {жанр1}({число раз}), {жанр2}({число раз}), {жанр3}({число раз}). Самый новый фильм - {год} года, самый старый фильм - {год} года. Продолжительность фильмов от {минимальная продолжительность} до {максимальная продолжительность}. Выбирайте фильм и приятного просмотра!-->
+<!--            </span>-->
+<!--        </div>-->
 
-        <div class="best_compilation_movies">
-            <div class="named_best_compilation_movies">
-                <span>
-                    Лучшие фильмы подборки
-                </span>
-            </div>
-            <div class="best_compilation_movies_border"></div>
-            <div class="best_compilation_movies_slider_btn">
-                <div class="best_compilation_movies_slider">
-                    <div class="best_compilation_movies_img_name_other_film">
-                        <img src="/static/img/1film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="best_compilation_movies_img_name_other_film">
-                        <img src="/static/img/2film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="best_compilation_movies_img_name_other_film">
-                        <img src="/static/img/3film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="best_compilation_movies_img_name_other_film">
-                        <img src="/static/img/4film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="best_compilation_movies_img_name_other_film">
-                        <img src="/static/img/5film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="best_compilation_movies">-->
+<!--            <div class="named_best_compilation_movies">-->
+<!--                <span>-->
+<!--                    Лучшие фильмы подборки-->
+<!--                </span>-->
+<!--            </div>-->
+<!--            <div class="best_compilation_movies_border"></div>-->
+<!--            <div class="best_compilation_movies_slider_btn">-->
+<!--                <div class="best_compilation_movies_slider">-->
+<!--                    <div class="best_compilation_movies_img_name_other_film">-->
+<!--                        <img src="/static/img/1film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="best_compilation_movies_img_name_other_film">-->
+<!--                        <img src="/static/img/2film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="best_compilation_movies_img_name_other_film">-->
+<!--                        <img src="/static/img/3film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="best_compilation_movies_img_name_other_film">-->
+<!--                        <img src="/static/img/4film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="best_compilation_movies_img_name_other_film">-->
+<!--                        <img src="/static/img/5film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="new_movies_compilation">
-            <div class="named_new_movies_compilation">
-                <span>
-                    Новые фильмы подборки
-                </span>
-            </div>
-            <div class="new_movies_compilation_border"></div>
-            <div class="new_movies_compilation_slider_btn">
-                <div class="new_movies_compilation_slider">
-                    <div class="new_movies_compilation_img_name_other_film">
-                        <img src="/static/img/1film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="new_movies_compilation_img_name_other_film">
-                        <img src="/static/img/2film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="new_movies_compilation_img_name_other_film">
-                        <img src="/static/img/3film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="new_movies_compilation_img_name_other_film">
-                        <img src="/static/img/4film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                    <div class="new_movies_compilation_img_name_other_film">
-                        <img src="/static/img/5film.jpg" alt="">
-                        <span class="named_film">
-                            Name
-                        </span>
-                        <span class="film_info">
-                            year, ganre, country
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="new_movies_compilation">-->
+<!--            <div class="named_new_movies_compilation">-->
+<!--                <span>-->
+<!--                    Новые фильмы подборки-->
+<!--                </span>-->
+<!--            </div>-->
+<!--            <div class="new_movies_compilation_border"></div>-->
+<!--            <div class="new_movies_compilation_slider_btn">-->
+<!--                <div class="new_movies_compilation_slider">-->
+<!--                    <div class="new_movies_compilation_img_name_other_film">-->
+<!--                        <img src="/static/img/1film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="new_movies_compilation_img_name_other_film">-->
+<!--                        <img src="/static/img/2film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="new_movies_compilation_img_name_other_film">-->
+<!--                        <img src="/static/img/3film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="new_movies_compilation_img_name_other_film">-->
+<!--                        <img src="/static/img/4film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="new_movies_compilation_img_name_other_film">-->
+<!--                        <img src="/static/img/5film.jpg" alt="">-->
+<!--                        <span class="named_film">-->
+<!--                            Name-->
+<!--                        </span>-->
+<!--                        <span class="film_info">-->
+<!--                            year, ganre, country-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="high_rated_movies">
-            <div class="high_rated_movies_common_block">
-                <div class="high_rated_movies_img_rating">
-                    <span>
-                        01
-                    </span>
-                    <img src="/static/img/1film.jpg" alt="">
-                    <div class="films_rating_block">
-                        <div class="rating_block rating_kinopoisk">
-                        <span class="rating_votes">
-                            6.7
-                        </span>
-                            <span class="rating_site_names">
-                            Кинопоиск
-                        </span>
-                        </div>
-                        <div class="rating_block rating_IMDb">
-                        <span class="rating_votes">
-                            6.7
-                        </span>
-                            <span class="rating_site_names">
-                            IMDb
-                        </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="high_rated_movies_named_descript">
-                    <div class="named_year_release_film_block">
-                        <span>
-                            Шан-Чи и легенда десяти колец (2021)
-                        </span>
-                        <span>
-                            Shang-Chi and the Legend of the Ten Rings
-                        </span>
-                    </div>
-                    <div class="duration_age_block"></div>
-                    <div class="genre_main_roles_block"></div>
-                    <div class="main_descript_film_block"></div>
-                </div>
-            </div>
+<!--        <div class="high_rated_movies">-->
+<!--            <div class="high_rated_movies_common_block">-->
+<!--                <div class="high_rated_movies_img_rating">-->
+<!--                    <span>-->
+<!--                        01-->
+<!--                    </span>-->
+<!--                    <img src="/static/img/1film.jpg" alt="">-->
+<!--                    <div class="films_rating_block">-->
+<!--                        <div class="rating_block rating_kinopoisk">-->
+<!--                        <span class="rating_votes">-->
+<!--                            6.7-->
+<!--                        </span>-->
+<!--                            <span class="rating_site_names">-->
+<!--                            Кинопоиск-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                        <div class="rating_block rating_IMDb">-->
+<!--                        <span class="rating_votes">-->
+<!--                            6.7-->
+<!--                        </span>-->
+<!--                            <span class="rating_site_names">-->
+<!--                            IMDb-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="high_rated_movies_named_descript">-->
+<!--                    <div class="named_year_release_film_block">-->
+<!--                        <span>-->
+<!--                            Шан-Чи и легенда десяти колец (2021)-->
+<!--                        </span>-->
+<!--                        <span>-->
+<!--                            Shang-Chi and the Legend of the Ten Rings-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="duration_age_block"></div>-->
+<!--                    <div class="genre_main_roles_block"></div>-->
+<!--                    <div class="main_descript_film_block"></div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="high_rated_movies_common_block">
-                <div class="high_rated_movies_img_rating">
-                    <span>
-                        02
-                    </span>
-                    <img src="/static/img/2film.jpg" alt="">
-                    <div class="films_rating_block">
-                        <div class="rating_block rating_kinopoisk">
-                        <span class="rating_votes">
-                            6.7
-                        </span>
-                            <span class="rating_site_names">
-                            Кинопоиск
-                        </span>
-                        </div>
-                        <div class="rating_block rating_IMDb">
-                        <span class="rating_votes">
-                            6.7
-                        </span>
-                            <span class="rating_site_names">
-                            IMDb
-                        </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="high_rated_movies_named_descript">
-                    <div class="named_year_release_film_block">
-                        <span class="named_rus">
-                             Гениальное ограбление (2021)
-                        </span>
-                        <span class="named_eng">
-                             Way Down
-                        </span>
-                    </div>
-                    <div class="duration_age_block">
-                        <div class="duration_age_info movie_duration">
-                            <span>
-                                Продолжительность
-                            </span>
-                            <span>
-                                1 Час 58 минут
-                            </span>
-                        </div>
-                        <div class="duration_age_info release_date">
-                            <span>
-                                Год выпуска
-                            </span>
-                            <span>
-                                2021
-                            </span>y
-                                Премьера в России
-                            </span>
-                            <span>
-                                22 Апреля 2021
-                            </span>
-                        </div>
-                        <div class="duration_age_info age_restriction">
-                            <span>
-                                Возраст
-                            </span>
-                            <span>
-                                16+
-                            </span>
-                        </div>
-                    </div>
-                    <div class="genre_main_roles_block"></div>
-                    <div class="main_descript_film_block"></div>
-                </div>
-            </div>
+<!--            <div class="high_rated_movies_common_block">-->
+<!--                <div class="high_rated_movies_img_rating">-->
+<!--                    <span>-->
+<!--                        02-->
+<!--                    </span>-->
+<!--                    <img src="/static/img/2film.jpg" alt="">-->
+<!--                    <div class="films_rating_block">-->
+<!--                        <div class="rating_block rating_kinopoisk">-->
+<!--                        <span class="rating_votes">-->
+<!--                            6.7-->
+<!--                        </span>-->
+<!--                            <span class="rating_site_names">-->
+<!--                            Кинопоиск-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                        <div class="rating_block rating_IMDb">-->
+<!--                        <span class="rating_votes">-->
+<!--                            6.7-->
+<!--                        </span>-->
+<!--                            <span class="rating_site_names">-->
+<!--                            IMDb-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="high_rated_movies_named_descript">-->
+<!--                    <div class="named_year_release_film_block">-->
+<!--                        <span class="named_rus">-->
+<!--                             Гениальное ограбление (2021)-->
+<!--                        </span>-->
+<!--                        <span class="named_eng">-->
+<!--                             Way Down-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                    <div class="duration_age_block">-->
+<!--                        <div class="duration_age_info movie_duration">-->
+<!--                            <span>-->
+<!--                                Продолжительность-->
+<!--                            </span>-->
+<!--                            <span>-->
+<!--                                1 Час 58 минут-->
+<!--                            </span>-->
+<!--                        </div>-->
+<!--                        <div class="duration_age_info release_date">-->
+<!--                            <span>-->
+<!--                                Год выпуска-->
+<!--                            </span>-->
+<!--                            <span>-->
+<!--                                2021-->
+<!--                            </span>-->
+<!--                            <span>-->
+<!--                                Премьера в России-->
+<!--                            </span>-->
+<!--                            <span>-->
+<!--                                22 Апреля 2021-->
+<!--                            </span>-->
+<!--                        </div>-->
+<!--                        <div class="duration_age_info age_restriction">-->
+<!--                            <span>-->
+<!--                                Возраст-->
+<!--                            </span>-->
+<!--                            <span>-->
+<!--                                16+-->
+<!--                            </span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="genre_main_roles_block"></div>-->
+<!--                    <div class="main_descript_film_block"></div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
-    </div>
-</div>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="all_content_right_block"></div>
 </div>
 <div class="footer_connection_atlas"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
