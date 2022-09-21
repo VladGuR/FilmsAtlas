@@ -1,377 +1,532 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+/** {*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*}*/
+
+/*a {*/
+/*    text-decoration: none;*/
+/*}*/
+
+body{
+    background-color: #171717;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
 }
 
-a {
-    text-decoration: none;
+.navbar {
+    background-color: #181A19;
 }
 
-span {
+.navbar .container-fluid{
+    padding: 0 40px;
+
+}
+
+.navbar-light .navbar-brand {
     color: #FFFFFF;
 }
 
-body {
+.navbar-light .navbar-brand:hover {
+    color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .dropdown-toggle:hover {
+    color: #d973e7;
+}
+
+.navbar-light .navbar-nav .dropdown-toggle:focus {
+    color: #FFFFFF;
+}
+
+.navbar-light .d-flex{
+    width: 40%;
+    background-color: #FFFFFF;
+    border-radius: 90px;
+}
+
+.navbar-light .form-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: none;
+    border-radius: 90px;
+    background-color: #FFFFFF;
+}
+
+.navbar-light .btn-outline-success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: 90px;
+}
+
+.w-100{
+    flex-direction: row;
+    padding: 0 40px;
+}
+
+.w-100 .card{
     display: flex;
     justify-content: start;
-    align-items: center;
-    width: 100%;
-    background: #1C1D1F;
-    flex-direction: column;
-}
-
-.page_menu_atlas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-    background: #1C1D1F;
-    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);
-}
-
-.page_menu_atlas .menu_links_seacrh {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: 70px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_logotype {
-    margin-right: 20px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_logotype a {
-    color: #FFFFFF;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_logotype a span {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 21px;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 600px;
-    margin-right: 20px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_links a {
-    margin-right: 10px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_links a span {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    color: #FFFFFF;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 30px;
-}
-
-.page_menu_atlas .menu_links_seacrh .menu_search input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 30px;
-    background: #252A2C;
-    border-radius: 90px;
-    border: none;
-    padding: 0 20px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 100;
-    font-size: 15px;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-}
-
-/*content block*/
-
-.all_content_atlas {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    width: 100%;
-}
-
-.all_content_atlas .all_content_left_block {
-    display: flex;
-    justify-content: center;
     align-items: center;
     width: 80%;
-    flex-direction: column;
-    margin: 30px 0 0 30px;
+    background-color: #171717;
+    margin: 30px 0 30px 0;
 }
 
-.all_content_atlas .all_content_left_block .best_films_img_descript {
-    display: flex;
-    justify-content: center;
-    align-items: start;
+.w-100 .card .card-img-top{
     width: 100%;
-    flex-direction: column;
-}
-
-.all_content_atlas .all_content_left_block .best_films_img_descript img {
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.all_content_atlas .all_content_left_block .best_films_img_descript .best_films_descript {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin-bottom: 80px;
-    line-height: 20px;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
-    flex-direction: column;
-    margin-bottom: 80px;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .named_best_compilation_movies {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .named_best_compilation_movies span {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
     margin-bottom: 30px;
 }
 
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_border {
-    width: 100%;
-    height: 2px;
-    background-color: #81BECB;
-    margin-bottom: 40px;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film img {
-    width: 200px;
-    height: 300px;
-    margin: 0 20px 20px 0;
-    border-radius: 2px;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film .named_film {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film .film_info {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
+.w-100 .card-body{
+    padding: 0;
 }
 
 
-.all_content_atlas .all_content_left_block .new_movies_compilation {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
-    flex-direction: column;
-    margin-bottom: 80px;
-}
+/*.page_menu_atlas {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 70px;*/
+/*    background: #1C1D1F;*/
+/*    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .named_new_movies_compilation {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-}
+/*.page_menu_atlas .menu_links_seacrh {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    width: 90%;*/
+/*    height: 70px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .named_new_movies_compilation span {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_logotype {*/
+/*    margin-right: 20px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_border {
-    width: 100%;
-    height: 2px;
-    background-color: #81BECB;
-    margin-bottom: 40px;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_logotype a {*/
+/*    color: #FFFFFF;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_logotype a span {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 600;*/
+/*    font-size: 21px;*/
+/*    color: #FFFFFF;*/
+/*    letter-spacing: 1px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_links {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    width: 600px;*/
+/*    margin-right: 20px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_links a {*/
+/*    margin-right: 10px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film img {
-    width: 200px;
-    height: 300px;
-    margin: 0 20px 20px 0;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_links a span {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 15px;*/
+/*    color: #FFFFFF;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film .named_film {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_search {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 600px;*/
+/*    height: 30px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film .film_info {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-}
+/*.page_menu_atlas .menu_links_seacrh .menu_search input {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 600px;*/
+/*    height: 30px;*/
+/*    background: #252A2C;*/
+/*    border-radius: 90px;*/
+/*    border: none;*/
+/*    padding: 0 20px;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 100;*/
+/*    font-size: 15px;*/
+/*    color: #FFFFFF;*/
+/*    letter-spacing: 1px;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .high_rated_movies {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+/*!*content block*!*/
 
-.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+/*.all_content_atlas {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: start;*/
+/*    width: 100%;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating span {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 430px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-    color: #727272;
+/*.all_content_atlas .all_content_left_block {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 80%;*/
+/*    flex-direction: column;*/
+/*    margin: 30px 0 0 30px;*/
+/*}*/
 
-}
+/*.all_content_atlas .all_content_left_block .best_films_img_descript {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: start;*/
+/*    width: 100%;*/
+/*    flex-direction: column;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating img {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 430px;
-    height: 670px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-}
+/*.all_content_atlas .all_content_left_block .best_films_img_descript img {*/
+/*    margin-bottom: 30px;*/
+/*    width: 100%;*/
+/*}*/
 
-.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_IMDb {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 428px;
-    height: 152px;
-    background: rgba(28, 29, 31, 0.5);
-    border: 1px solid #2B2B2B;
-    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(20px);
-    border-radius: 5px;
-}
+/*.all_content_atlas .all_content_left_block .best_films_img_descript .best_films_descript {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 15px;*/
+/*    letter-spacing: 1px;*/
+/*    margin-bottom: 80px;*/
+/*    line-height: 20px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: start;*/
+/*    width: 100%;*/
+/*    flex-direction: column;*/
+/*    margin-bottom: 80px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .named_best_compilation_movies {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .named_best_compilation_movies span {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 30px;*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_border {*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    background-color: #81BECB;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film img {*/
+/*    width: 200px;*/
+/*    height: 300px;*/
+/*    margin: 0 20px 20px 0;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film .named_film {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .best_compilation_movies .best_compilation_movies_slider_btn .best_compilation_movies_slider .best_compilation_movies_img_name_other_film .film_info {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 15px;*/
+/*}*/
 
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: start;*/
+/*    width: 100%;*/
+/*    flex-direction: column;*/
+/*    margin-bottom: 80px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .named_new_movies_compilation {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .named_new_movies_compilation span {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 30px;*/
+/*    margin-bottom: 30px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_border {*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    background-color: #81BECB;*/
+/*    margin-bottom: 40px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film img {*/
+/*    width: 200px;*/
+/*    height: 300px;*/
+/*    margin: 0 20px 20px 0;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film .named_film {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .new_movies_compilation .new_movies_compilation_slider_btn .new_movies_compilation_slider .new_movies_compilation_img_name_other_film .film_info {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 15px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .high_rated_movies {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: start;*/
+/*    width: 100%;*/
+/*    flex-direction: column;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_common_block{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin-bottom: 60px;*/
+/*}*/
 
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*    margin-right: 30px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating span {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 430px;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 700;*/
+/*    font-size: 80px;*/
+/*    color: #727272;*/
+
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating img {*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    align-items: center;*/
+/*    width: 430px;*/
+/*    height: 670px;*/
+/*    border-radius: 5px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    align-items: center;*/
+/*    width: 428px;*/
+/*    height: 152px;*/
+/*    !*background: rgba(28, 29, 31, 0.5);*!*/
+/*    border: 1px solid #2B2B2B;*/
+/*    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 120px;*/
+/*    height: 120px;*/
+/*    border-radius: 100%;*/
+/*    border: 3px solid #FF8E00;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block .rating_votes{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 700;*/
+/*    font-size: 30px;*/
+/*    color: #FFFFFF;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_img_rating .films_rating_block .rating_block .rating_site_names{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 500;*/
+/*    font-size: 16px;*/
+/*    color: #FFFFFF;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: start;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block .named_rus{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 500;*/
+/*    font-size: 40px;*/
+/*    color: #FFFFFF;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .named_year_release_film_block .named_eng{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-size: 30px;*/
+/*    color: #FFFFFF;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .duration_age_block{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: #212121;*/
+/*    border: 1px solid #2B2B2B;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.all_content_atlas .all_content_left_block .high_rated_movies .high_rated_movies_named_descript .duration_age_block .duration_age_info{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 700;*/
+/*    font-size: 20px;*/
+/*    color: #FFFFFF;*/
+/*}*/
 
 
 
