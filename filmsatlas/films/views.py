@@ -7,17 +7,17 @@ from .models import Film, GenreFilm, LinkFilm, CountryFilm, CollectionFilm, Coll
 
 
 def index(request):
-    films_year = Film.objects.all().order_by('year', 'rating_imdb', 'saw')
-    films_saw = Film.objects.all().order_by('saw', 'rating_imdb', 'year')
-    collections = Collection.all().order_by('sort')
+    films_year = Film.objects.all().order_by('year_of_release', 'rating_imdb', 'saw')
+    films_saw = Film.objects.all().order_by('saw', 'rating_imdb', 'year_of_release')
+    collections = Collection.objects.all().order_by('sort')
     genres = Genre.objects.all()
     context = {
         'films_year': films_year,
         'films_saw': films_saw,
         'collections': collections,
+        'genres': genres,
     }
     return render(request, '/films/Atlas_main_page.html', context)
-    pass
 
 
 def film(request, film=None):

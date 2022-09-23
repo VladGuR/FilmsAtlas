@@ -1,6 +1,5 @@
 from django.urls import re_path, include
-import films.views as films
-
+import films.apiviews as films
 
 app_name = 'films'
 
@@ -14,5 +13,4 @@ urlpatterns = [
     re_path('collection/(?P<collection>.*\s*)/$', films.collection, name='collection'),
     re_path('film/(?P<film>.*\s*)/$', films.film, name='film'),
     re_path('search/(?P<search>.*\s*)/$', films.search, name='search'),
-    re_path('films/api/', include('films.apiurls', namespace='apiurls')),
 ]
