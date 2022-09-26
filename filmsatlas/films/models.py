@@ -66,10 +66,17 @@ class Film(models.Model):
 
     def json_dump_film(self):
         genre = GenreFilm.objects.filter(film_id=self.id)
+        country = CountryFilm.objects.filter(film_id=self.id)
+        context_country = [obj.json_dump_country() for obj in country]
         context_genre = [obj.json_dump_genre() for obj in genre]
         context={
             'name': self.name,
-            'genre': context_genre,
+            'year_of_release': str(self.year_of_release),
+            'duration': self.duration,
+            'image': str(self.image.url if self.image else ""),
+            'description': self.description if self.description else "",
+            'genre': context_genre if context_genre else "",
+            'context_country': context_country if context_country else "",
         }
         return context
 
@@ -83,6 +90,8 @@ class CountryFilm(models.Model):
     country = models.ForeignKey(Country, verbose_name='Страна', related_name='country', on_delete=models.CASCADE)
     film = models.ForeignKey(Film, verbose_name='Фильм', related_name='country_film', on_delete=models.CASCADE)
 
+    def json_dump_country(self):
+        return f'{self.country.name}'
 
 class LinkFilm(models.Model):
     name = models.ForeignKey(Film, verbose_name='Фильм', related_name='link_film', on_delete=models.CASCADE)

@@ -32,18 +32,30 @@ def index(request):
         #     # 'collections': collections,
         #     # 'genres': genres,
         # }
-
+        # context = json.dumps({'data': context})
+        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
     except TypeError:
         status = 500
         context = {
             'message': 'Error'
         }
-    return HttpResponse(json.dumps({'data': context}), content_type='application/json')
-    # return JsonResponse(status=status, data=context)
+        return HttpResponse(json.dumps({'data': context}), content_type='application/json')
+    # return JsonResponse(status=status, json.dumps({'data': context}))
 
 
 def film(request, film=None):
-    pass
+    film=film
+    try:
+        film = Film.objects.filter(id=film)
+        context = [obj.json_dump_film() for obj in film]
+        status = 200
+        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+    except TypeError:
+        status = 500
+        context = {
+            'message': 'Error'
+        }
+        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
 
 
 def genres(request):
