@@ -4,13 +4,25 @@ from django.db import models
 
 
 class Genre(models.Model):
-    name = models.CharField(verbose_name='Жанры', max_length=100)
+    name = models.CharField(verbose_name='Жанры', unique=True, max_length=100)
     desc = models.TextField(verbose_name='Описание', blank=True)
     img = models.ImageField(verbose_name='Картинка', blank=True, upload_to='ganre_img')
     seo_desc = models.TextField(verbose_name='Сео описание', blank=True)
 
     def __str__(self):
         return f'{self.name}'
+
+    def json_dump_genre(self, quantity):
+        if quantity:
+            films = GenreFilm.objects.filter(genre_id=self.id)[:10]
+        else:
+            films = GenreFilm.objects.filter(genre_id=self.id)
+        context_films = [obj.film.json_dump_film() for obj in films]
+        context = {
+            'genre': self.name,
+            'films': context_films if context_films else "",
+        }
+        return context
 
     class Meta:
         ordering = ['name']
@@ -19,10 +31,19 @@ class Genre(models.Model):
 
 
 class Country(models.Model):
-    name = models.CharField(verbose_name='Страна', max_length=150)
+    name = models.CharField(verbose_name='Страна', unique=True, max_length=150)
 
     def __str__(self):
         return f'{self.name}'
+
+    def json_dump_country(self):
+        films = CountryFilm.objects.filter(country=self.id)
+        context_films = [obj.film.json_dump_film() for obj in films]
+        context = {
+            'country': self.name,
+            'films': context_films if context_films else "",
+        }
+        return context
 
     class Meta:
         ordering = ['name']
@@ -31,7 +52,7 @@ class Country(models.Model):
 
 
 class Collection(models.Model):
-    name = models.CharField(verbose_name='Подборка', max_length=100)
+    name = models.CharField(verbose_name='Подборка', unique=True, max_length=100)
     desc = models.TextField(verbose_name='Описание', blank=True)
     img = models.ImageField(verbose_name='Картинка', blank=True, upload_to='ganre_img')
     seo_desc = models.TextField(verbose_name='Сео описание', blank=True)
@@ -40,6 +61,18 @@ class Collection(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+    def json_dump_country(self, quantity):
+        if quantity:
+            films = CollectionFilm.objects.filter(collection_id=self.id)[:10]
+        else:
+            films = CollectionFilm.objects.filter(collection_id=self.id)
+        context_films = [obj.film.json_dump_film() for obj in films]
+        context ={
+            'collection': self.name,
+            'films': context_films if context_films else ""
+        }
+        return context
+
     class Meta:
         ordering = ['name']
         verbose_name = 'Подборка'
@@ -47,7 +80,7 @@ class Collection(models.Model):
 
 
 class Film(models.Model):
-    name = models.CharField(verbose_name='Название фильма', unique=True, max_length=150)
+    name = models.CharField(verbose_name='Название фильма', max_length=150)
     duration = models.CharField(verbose_name='Продолжительность', max_length=150, blank=True)
     year_of_release = models.DateField(verbose_name='Дата выпуска', default='1000-01-01', blank=True)
     age = models.SmallIntegerField(verbose_name='Возраст', default=0, blank=True)
@@ -93,6 +126,7 @@ class CountryFilm(models.Model):
     def json_dump_country(self):
         return f'{self.country.name}'
 
+
 class LinkFilm(models.Model):
     name = models.ForeignKey(Film, verbose_name='Фильм', related_name='link_film', on_delete=models.CASCADE)
     link_film = models.URLField(verbose_name='Ссылка на фильм', blank=True)
@@ -100,10 +134,19 @@ class LinkFilm(models.Model):
 
 class GenreFilm(models.Model):
     genre = models.ForeignKey(Genre, verbose_name='Жанр', related_name='genre', on_delete=models.CASCADE)
-    film = models.ForeignKey(Film, verbose_name='Фильм', related_name='genre_film', to_field='name', on_delete=models.CASCADE)
+    film = models.ForeignKey(Film, verbose_name='Фильм', related_name='genre_film', on_delete=models.CASCADE)
 
     def json_dump_genre(self):
         return f'{self.genre.name}'
+
+    def json_dump_films(self):
+        context = {
+            'name': self.film.name,
+            'image': str(self.film.image.url if self.film.image else ""),
+            'year_of_release': str(self.film.year_of_release),
+            'duration': self.film.duration,
+        }
+        return context
 
 
 class CollectionFilm(models.Model):
