@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.template.context_processors import csrf
 from .models import Film, GenreFilm, LinkFilm, CountryFilm, CollectionFilm, Collection, Country, Genre
 # Create your views here.
-
+from .forms import CreateGenre
 from django.core import serializers
 from django.http import HttpResponse
 
@@ -60,18 +60,37 @@ def film(request, film=None):
 
 
 def genres(request):
-    try:
-        genres = Genre.objects.all()
-        context = {'title': 'genres',
-                   'content': [obj.json_dump_genre(quantity=True) for obj in genres],}
-        status = 200
-        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
-    except TypeError:
-        status = 500
-        context = {
-            'message': 'Error',
-        }
-        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+    if request.method == 'GET':
+        try:
+            genres = Genre.objects.all()
+            context = {'title': 'genres',
+                       'content': [obj.json_dump_genre(quantity=True) for obj in genres],}
+            status = 200
+            return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+        except TypeError:
+            status = 500
+            context = {
+                'message': 'Error',
+            }
+            return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+    if request.method == 'POST':
+        try:
+            name = request.POST.get('name', False)
+            form = CreateGenre(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+            genres = Genre.objects.all()
+            context = {'title': 'genres',
+                       'content': [obj.json_dump_genre(quantity=True) for obj in genres], }
+            status = 200
+            return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+
+        except TypeError:
+            status = 501
+            context = {
+                'message': 'Error'
+            }
+            return HttpResponse(status=status, context=json.dumps({'data': context}), content_type='application/json')
 
 
 def genre(request, genre=None):
@@ -88,6 +107,25 @@ def genre(request, genre=None):
             'message': 'Error',
         }
         return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+
+
+def genre_delete(requesr, genre=None):
+    genre=genre
+    try:
+        genre = Genre.objects.get(id=genre)
+        if genre:
+            genre.delete()
+        genres = Genre.objects.all()
+        context = {'title': 'genres',
+                   'content': [obj.json_dump_genre(quantity=True) for obj in genres], }
+        status = 200
+        return HttpResponse(status=status, content=json.dumps({'data': context}), content_type='application/json')
+    except TypeError:
+        status = 501
+        context = {
+            'message': 'Error'
+        }
+        return HttpResponse(status=status, context=json.dumps({'data': context}), content_type='application/json')
 
 
 def year(request, year=None):

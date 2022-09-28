@@ -7,6 +7,7 @@ urlpatterns = [
     re_path('$', films.index, name='index'),
     re_path('genres/$', films.genres, name='genres'),
     re_path('genre/(?P<genre>.*\s*)/$', films.genre, name='genre'),
+    re_path('genre/(?P<genre>.*\s*)/delete/$', films.genre_delete, name='genre_delete'),
     re_path('sort-year/(?P<year>.*\s*)/$', films.year, name='year'),
     re_path('sort-country/(?P<country>.*\s*)/$', films.country, name='country'),
     re_path('collections/$', films.collections, name='collections'),
