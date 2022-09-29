@@ -36,6 +36,10 @@ class Country(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+    def self_name(self):
+        context = str(self.name)
+        return context
+
     def json_dump_country(self):
         films = CountryFilm.objects.filter(country=self.id)
         context_films = [obj.film.json_dump_film() for obj in films]
@@ -82,7 +86,7 @@ class Collection(models.Model):
 class Film(models.Model):
     name = models.CharField(verbose_name='Название фильма', max_length=150)
     duration = models.CharField(verbose_name='Продолжительность', max_length=150, blank=True)
-    year_of_release = models.DateField(verbose_name='Дата выпуска', default='1000-01-01', blank=True)
+    year_of_release = models.DateField(verbose_name='Дата выпуска', default='2000-01-01', blank=True)
     age = models.SmallIntegerField(verbose_name='Возраст', default=0, blank=True)
     description = models.TextField(verbose_name='Описание', blank=True)
     image = models.ImageField(verbose_name='Картинка', upload_to='film_img', blank=True)
