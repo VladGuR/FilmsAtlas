@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% if films_collections %}
+<div class="films-collections">
+    {% for films_collection in films_collections %}
+    <div class="films_collection-name">{{ films_collection.name }}</div>
+    <div class="films_collection-img"><img src="{{ films_collection.img.url }}"></div>
+    <div class="films_collection-desc">{{ films_collection.desc }}</div>
+        {% for film in films_collection.check_filmcollection %}
+        <div class="film">
+            <div class="film-name">{{ film.name }}</div>
+            {% if film.year_of_release %}
+            <div class="film-year_of_release">{{ film.year_of_release }}</div>
+            {% else %}
+            <div class="film-year_of_release"></div>
+            {% endif %}
+            {% if film.image %}
+            <div class="film-img"><img src="{{ film.image.url }}"></div>
+            {% else %}
+            <div class="film-img"></div>
+            {% endif %}
+            {% if film.check_ganre %}
+            <div class="film-genre">
+                {% for genre in film.check_ganre %}
+                {{ genre.genre.name }}
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="film-genre"></div>
+            {% endif %}
+            {% if film.check_country %}
+            <div class="film-country">
+                {% for country in film.check_country %}
+                    {{ country.country.name }}
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="film-country"></div>
+            {% endif %}
+        </div>
+        {% empty %}
+            <div class="films-none">No films</div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endif %}
+{% if films %}
+<div class="films">
+    {% for film in films %}
+    <div class="film">
+        <div class="film-name">{{ film.name }}</div>
+        {% if film.year_of_release %}
+        <div class="film-year_of_release">{{ film.year_of_release }}</div>
+        {% else %}
+        <div class="film-year_of_release"></div>
+        {% endif %}
+        {% if film.image %}
+        <div class="film-img"><img src="{{ film.image.url }}"></div>
+        {% else %}
+        <div class="film-img"></div>
+        {% endif %}
+        {% if film.check_ganre %}
+        <div class="film-genre">
+            {% for genre in film.check_ganre %}
+            {{ genre.genre.name }}
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="film-genre"></div>
+        {% endif %}
+        {% if film.check_country %}
+        <div class="film-country">
+            {% for country in film.check_country %}
+                {{ country.country.name }}
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="film-country"></div>
+        {% endif %}
+    </div>
+    {% empty %}
+        <div class="films-none">No films</div>
+    {% endfor %}
+</div>
+{% endif %}
+</body>
+</html>

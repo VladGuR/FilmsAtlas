@@ -65,6 +65,10 @@ class Collection(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+    def check_filmcollection(self):
+        collectionsfilm = CollectionFilm.objects.filter(collection_id=self.id)
+        return collectionsfilm
+
     def json_dump_country(self, quantity):
         if quantity:
             films = CollectionFilm.objects.filter(collection_id=self.id)[:10]
@@ -100,6 +104,22 @@ class Film(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+    def check_collectionfilm(self):
+        collectionsfilm = CollectionFilm.objects.filter(film_id = self.id)
+        return collectionsfilm
+
+    def check_country(self):
+        country = CountryFilm.objects.filter(film_id=self.id)
+        return country
+
+    def check_ganre(self):
+        genre = GenreFilm.objects.filter(film_id=self.id)
+        return genre
+
+    def check_linkfilm(self):
+        linkfilm = LinkFilm.objects.filter(film_id=self.id)
+        return linkfilm
 
     def json_dump_film(self):
         genre = GenreFilm.objects.filter(film_id=self.id)
