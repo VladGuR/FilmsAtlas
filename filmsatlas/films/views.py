@@ -14,7 +14,6 @@ def index(request):
     context = {
         'films': films,
         'films_collection': films_collection,
-        # 'films': films,
         'genres': genres,
     }
     return render(request, 'films/index.html', context)
