@@ -1,7 +1,6 @@
 from django.urls import re_path, include
 import films.views as films
 
-
 app_name = 'films'
 
 urlpatterns = [
@@ -17,4 +16,6 @@ urlpatterns = [
     re_path('search/(?P<search>.*\s*)/$', films.search, name='search'),
     re_path('country/(?P<country>.*\s*)/$', films.country, name='country'),
     re_path('films/api/', include('films.apiurls', namespace='apiurls')),
+
+
 ]
