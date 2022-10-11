@@ -50,7 +50,7 @@ def check_film(link):
         'genre': gen,
         'embed_url': embed_url,
     }
-    save_film(context)
+    # save_film(context)
     return context
 
 
@@ -73,15 +73,15 @@ def check_page():
     webpage = urlopen(req).read()
     html = bs4.BeautifulSoup(webpage, 'html.parser')
     # print(html)
-    items = html.select('.pagi-nav > .navigation > a')[-1].text
+    items = html.select('a')
     # print(items)
-    response = check_films(items)
-    return response
+    # response = check_films(items)
+    return type(items)
 
 
 s = check_page()
 print(s)
-print(len(s))
+# print(len(s))
 
 # f = open('list_films.py', 'a')
 # for obj in s:

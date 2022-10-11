@@ -11,7 +11,7 @@ urlpatterns = [
     re_path('sort-country/(?P<country>.*\s*)/$', films.country, name='country'),
     re_path('collections/$', films.collections, name='collections'),
     re_path('collection/(?P<collection>.*\s*)/$', films.collection, name='collection'),
-    re_path('films?page=(?P<page>\d+)/$', films.films_page, name='films_page'),
+    re_path('films/page/(?P<page>\d+)/$', films.films_page, name='films_page'),
     re_path('film/(?P<film>.*\s*)/$', films.film, name='film'),
     re_path('search/(?P<search>.*\s*)/$', films.search, name='search'),
     re_path('country/(?P<country>.*\s*)/$', films.country, name='country'),

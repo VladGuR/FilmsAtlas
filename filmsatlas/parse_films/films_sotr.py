@@ -44,7 +44,7 @@ def check_all_info_films():
         list_url = film['url']
         list_img = film['img']
         date = film['name']
-        list_date = date.split('(')[1][0:4]
+        list_date = date[-5:-1]
         list_embed_url = film['embed_url']
         context = {
             'name': list_name,
@@ -58,9 +58,3 @@ def check_all_info_films():
         all_films_info.append(context)
     return all_films_info
 
-
-a = ['1', '2', '3']
-b = '1'
-if b in a:
-    print(a[b])
-    print(b)

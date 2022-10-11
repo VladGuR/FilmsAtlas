@@ -58,23 +58,36 @@ def films_update(request):
                 films_list = check_all_info_films()
                 if films_list:
                     for film in films_list:
+                        error = []
                         if film['name'] in films_name:
-                            continue
+                            films_get = Film.objects.get(name=film['name'])
+                            if films_get.desc != True:
+                                films_get.add(description=film['desc'])
+                            if films_get.image != True:
+                                films_get.add(image=film['img'])
                         else:
                             film_add = Film.objects.create(name=film['name'], description=film['desc'],
                                                            year_of_release=film['date'], image=film['img'])
                             if film['embed_url']:
                                 LinkFilm.objects.create(name=film_add, link_film=film['embed_url'])
                             if film['genre']:
-                                genre = GenreFilm.objects.all()
+                                genre = Genre.objects.all()
                                 genre_name = [str(obj.name) for obj in genre]
                                 for obj in film['genre']:
-                                    if obj in genre_name:
-                                        gen = GenreFilm.objects.filter(name=obj)
-                                        GenreFilm.objects.create(genre=gen, film=film_add)
-                                    else:
-                                        genre_add = Genre.objects.create(name=obj)
-                                        GenreFilm.objects.create(genre=genre_add, film=film_add)
+                                    try:
+                                        genre_film_get = GenreFilm.objects.filter(genre=obj, film=film_add)
+                                        if genre_film_get:
+                                            print(genre_film_get)
+
+                                    except:
+                                        if obj in genre_name:
+                                            gen = Genre.objects.get(name=obj)
+                                            genre_film_save = GenreFilm(genre=gen, film=film_add)
+                                            genre_film_save.save()
+                                        else:
+                                            genre_add = Genre.objects.create(name=obj)
+                                            genre_film_save = GenreFilm(genre=genre_add, film=film_add)
+                                            genre_film_save.save()
 
                     films_model = Film.objects.all()
                     context = {

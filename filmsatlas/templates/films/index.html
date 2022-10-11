@@ -14,47 +14,7 @@
     <div class="films_collection-name">{{ films_collection.name }}</div>
     <div class="films_collection-img"><img src="{{ films_collection.img.url }}"></div>
     <div class="films_collection-desc">{{ films_collection.desc }}</div>
-        {% for film in films_collection.check_filmcollection %}
-        <div class="film">
-            <div class="film-name">{{ film.name }}</div>
-            {% if film.year_of_release %}
-            <div class="film-year_of_release">{{ film.year_of_release }}</div>
-            {% else %}
-            <div class="film-year_of_release"></div>
-            {% endif %}
-            {% if film.image %}
-            <div class="film-img"><img src="{{ film.image.url }}"></div>
-            {% else %}
-            <div class="film-img"></div>
-            {% endif %}
-            {% if film.check_ganre %}
-            <div class="film-genre">
-                {% for genre in film.check_ganre %}
-                {{ genre.genre.name }}
-                {% endfor %}
-            </div>
-            {% else %}
-            <div class="film-genre"></div>
-            {% endif %}
-            {% if film.check_country %}
-            <div class="film-country">
-                {% for country in film.check_country %}
-                    {{ country.country.name }}
-                {% endfor %}
-            </div>
-            {% else %}
-            <div class="film-country"></div>
-            {% endif %}
-        </div>
-        {% empty %}
-            <div class="films-none">No films</div>
-        {% endfor %}
-    {% endfor %}
-</div>
-{% endif %}
-{% if films %}
-<div class="films">
-    {% for film in films %}
+    {% for film in films_collection.check_filmcollection %}
     <div class="film">
         <div class="film-name">{{ film.name }}</div>
         {% if film.year_of_release %}
@@ -79,7 +39,7 @@
         {% if film.check_country %}
         <div class="film-country">
             {% for country in film.check_country %}
-                {{ country.country.name }}
+            {{ country.country.name }}
             {% endfor %}
         </div>
         {% else %}
@@ -87,9 +47,62 @@
         {% endif %}
     </div>
     {% empty %}
-        <div class="films-none">No films</div>
+    <div class="films-none">No films</div>
+    {% endfor %}
     {% endfor %}
 </div>
+{% endif %}
+{% if films %}
+<div class="films">
+    {% for film in films %}
+    <a href="{% url 'films:film' film.name %}" class="film-{{film.id}}">
+        <div class="film">
+            <div class="film-name">{{ film.name }}</div>
+            {% if film.year_of_release %}
+            <div class="film-year_of_release">{{ film.year_of_release }}</div>
+            {% else %}
+            <div class="film-year_of_release"></div>
+            {% endif %}
+            {% if film.image %}
+            <div class="film-img"><img src="{{ film.image.url }}"></div>
+            {% else %}
+            <div class="film-img"></div>
+            {% endif %}
+            {% if film.check_ganre %}
+            <div class="film-genre">
+                {% for genre in film.check_ganre %}
+                {{ genre.genre.name }}
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="film-genre"></div>
+            {% endif %}
+            {% if film.check_country %}
+            <div class="film-country">
+                {% for country in film.check_country %}
+                {{ country.country.name }}
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="film-country"></div>
+            {% endif %}
+        </div>
+    </a>
+    {% empty %}
+    <div class="films-none">No films</div>
+    {% endfor %}
+</div>
+{% if films_page %}
+{% for page_f in films_page.page_range %}
+{% if page == page_f %}
+<div class="page-{{page_f}}">{{page_f}}</div>
+{% else %}
+<a href="{% url 'films:films_page' page_f %}" class="a-page">
+    <div class="page-{{page_f}}">{{page_f}}</div>
+</a>
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endif %}
 </body>
 </html>
