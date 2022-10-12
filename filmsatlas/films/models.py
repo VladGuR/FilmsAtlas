@@ -12,24 +12,19 @@ class Genre(models.Model):
     def __str__(self):
         return f'{self.name}'
 
-    def check_genre(self):
-        genre = GenreFilm.objects.filter(film_id=self.id)
-        country = CountryFilm.objects.filter(film_id=self.id)
-        context_country = [obj.name for obj in country]
-        context_genre = [obj.name for obj in genre]
-        context = {
-            'name': self.name,
-            'year_of_release': str(self.year_of_release),
-            'duration': self.duration,
-            'image': str(self.image.url if self.image else ""),
-            'description': self.description if self.description else "",
-            'genre': context_genre if context_genre else "",
-            'context_country': context_country if context_country else "",
-        }
-        return context
-
     def self_name(self):
         context = str(self.name)
+        return context
+
+    def check_genres(self):
+        films = GenreFilm.objects.filter(genre_id=self.id)[:6]
+        name = self.name[0].upper()+self.name[1:]
+        context_films = [obj.film.check_film() for obj in films]
+        context = {
+            'name': name,
+            'desc': self.desc,
+            'films': context_films if context_films else "",
+        }
         return context
 
     def json_dump_genre(self, quantity):
@@ -127,13 +122,9 @@ class Film(models.Model):
 
     def check_film(self):
         genre = GenreFilm.objects.filter(film_id=self.id)
-        print('genre: ', genre)
         country = CountryFilm.objects.filter(film_id=self.id)
-        print('country: ', country)
         context_country = [obj.country.name for obj in country]
-        print('context_country: ', context_country)
         context_genre = [obj.genre.name for obj in genre]
-        print('context_genre: ', context_genre)
         context = {
             'name': self.name,
             'year_of_release': str(self.year_of_release),

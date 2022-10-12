@@ -29,12 +29,9 @@ def films_page(request, page=None):
     page = int(page)
     if request.method == 'GET':
         films = Film.objects.all().order_by('year_of_release', 'rating_imdb', 'saw').reverse()
-        # films = [obj.check_film() for obj in films_year]
         films_page = Paginator(films, 50)
         films_collection = Collection.objects.all()[:10]
         pages = films_page.page(page)
-        print(films_page.count)
-        print(films_page.num_pages)
         films = pages.object_list
         genres = Genre.objects.all()
         context = {
@@ -56,9 +53,12 @@ def film(request, film=None):
 
 
 def genres(request):
-    pass
-    # genres_all = Genre.objects.all().order_by('name')
-    # genres =
+    genres_all = Genre.objects.all().order_by('name')
+    genres = [obj.check_genres() for obj in genres_all]
+    context = {
+        'genres': genres,
+    }
+    return render(request, 'films/genre.html', context)
 
 
 def genre(request, genre=None):

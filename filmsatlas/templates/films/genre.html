@@ -11,8 +11,18 @@
 {% if genres %}
 <div class="genres">
 {% for genre in genres %}
-    <div class="genre-name">{{ genre.name }}</div>
+    <br>
+    <tr></tr>
 
+    <div class="genre-name">{{ genre.name }}</div>
+    <div class="genre-desc">{{genre.desc}}</div>
+    <br>
+    {% for film in genre.films %}
+    <div class="film">
+        <div class="film-name">{{film.name}}</div>
+    </div>
+    {% empty %}
+    {% endfor %}
 {% empty %}
     <div class="no-genres">No genres</div>
 {% endfor %}

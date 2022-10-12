@@ -6,7 +6,7 @@ import re
 import json
 import sys
 
-http_site = 'http://localhost:8000/films/api/'
+http_site = 'http://localhost:8001/films/api/'
 # http_all_categories = '/categories&json'
 # http_get_categories = '/categoryList&json&path='
 # http_all_special_product = '/specialProduct&json'
